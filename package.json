@@ -7,8 +7,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "postcss": "^8.4.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -38,7 +40,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
