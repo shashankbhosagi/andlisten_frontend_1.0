@@ -1,4 +1,4 @@
-import Card from "./shared/Card";
+import Card from "./Card";
 
 const PlaylistView = ({ titleText, cardsData }) => {
   return (

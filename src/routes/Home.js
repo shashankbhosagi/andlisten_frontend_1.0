@@ -1,6 +1,6 @@
 import SideBarComponent from "../components/shared/SideBar";
 import NavBar from "../components/shared/NavBar";
-import PlaylistView from "../components/PlayListView";
+import PlaylistView from "../components/shared/PlayListView";
 
 const Songs = [
   {
