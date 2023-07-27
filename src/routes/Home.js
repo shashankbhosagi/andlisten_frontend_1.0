@@ -1,12 +1,16 @@
-import { Icon } from "@iconify/react";
-import spotify_logo from "../assets/images/spotify_logo.svg";
-import IconText from "../components/shared/IconText";
 import SideBarComponent from "../components/shared/SideBar";
-
+import NavBar from "../components/shared/NavBar";
 const HomeComponent = () => {
   return (
     <>
-      <SideBarComponent />
+      <div className="h-full w-full flex">
+        <SideBarComponent />
+        {/* //TODO: Remove that inline css(background) euu!!!! */}
+        <div className="h-full w-4/5" style={{ background: `#121212` }}>
+          <NavBar />
+          <div className="content"></div>
+        </div>
+      </div>
     </>
   );
 };
