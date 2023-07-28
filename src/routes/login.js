@@ -1,8 +1,32 @@
+import { useState } from "react";
+import { useCookies } from "react-cookie";
 import { Icon } from "@iconify/react";
 import TextInput from "../components/shared/TextInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { makeUnaunthenticatedPOSTRequest } from "../utils/serverHelpers";
 
 const LoginComponent = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cookies, setCookies] = useCookies(["token"]);
+  const navigate = useNavigate();
+
+  const login = async () => {
+    const data = { email, password };
+    const response = await makeUnaunthenticatedPOSTRequest("/auth/login", data);
+    if (response && !response.err) {
+      console.log(response.usertoReturn);
+      const token = response.usertoReturn.token;
+      const date = new Date();
+      date.setDate(date.getDate + 30);
+      setCookies("token", token, { path: "/", expires: date });
+      alert("Success");
+      navigate("/home");
+    } else {
+      alert("Failure");
+    }
+  };
+
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className="logo p-5 border-b border-solid border-gray-300 w-full flex justify-center">
@@ -16,10 +40,24 @@ const LoginComponent = () => {
           placeholder="Email address or UserName"
           type="text"
           className="my-6"
+          value={email}
+          setValue={setEmail}
         />
-        <TextInput label="Password" placeholder="Password" type="password" />
+        <TextInput
+          label="Password"
+          placeholder="Password"
+          type="password"
+          value={password}
+          setValue={setPassword}
+        />
         <div className=" w-full flex items-center justify-end my-8">
-          <button className="bg-green-300 font-semibold p-3 px-10 rounded-full">
+          <button
+            className="bg-green-300 font-semibold p-3 px-10 rounded-full"
+            onClick={(e) => {
+              e.preventDefault();
+              login();
+            }}
+          >
             LOG IN
           </button>
         </div>
