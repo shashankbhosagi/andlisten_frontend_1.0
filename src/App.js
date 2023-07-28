@@ -4,6 +4,8 @@ import LoginComponent from "./routes/Login";
 import SignupComponent from "./routes/Signup";
 import HomeComponent from "./routes/Home";
 import { useCookies } from "react-cookie";
+import LoggedInHomeComponent from "./routes/LoggedInHome";
+import UploadSongComponent from "./routes/UploadSongCompanent";
 
 function App() {
   const [cookie, setCookie] = useCookies("token");
@@ -12,12 +14,15 @@ function App() {
       <BrowserRouter>
         {cookie.token ? (
           <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path="/home" element={<HomeComponent />} />
+            {/* Logged in routes */}
+            <Route path="/" element={<HelloComponent />} />
+            <Route path="/home" element={<LoggedInHomeComponent />} />
+            <Route path="/uploadSong" element={<UploadSongComponent />} />
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         ) : (
           <Routes>
+            {/* Logged out routes */}
             <Route path="/home" element={<HomeComponent />} />
             <Route path="/login" element={<LoginComponent />} />
             <Route path="/signup" element={<SignupComponent />} />
@@ -29,4 +34,7 @@ function App() {
   );
 }
 
+const HelloComponent = () => {
+  return <div>THis is helloo from Shashank</div>;
+};
 export default App;
