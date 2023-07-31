@@ -1,11 +1,11 @@
+import { useState, useEffect } from "react";
+import { Howl, Howler } from "howler";
 import TextWithHover from "../components/shared/TextWithHover";
 import { Icon } from "@iconify/react";
 import spotify_logo from "../assets/images/spotify_logo.svg";
 import IconText from "../components/shared/IconText";
 import SingleSongCard from "../components/shared/SingleSongCard";
 import { makeAuthenticatedGETResuest } from "../utils/serverHelpers";
-import { useState, useEffect } from "react";
-import { Howl, Howler } from "howler";
 
 const MyMusic = () => {
   const [songData, setSongData] = useState([]);
