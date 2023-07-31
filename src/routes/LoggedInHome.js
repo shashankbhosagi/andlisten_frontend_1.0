@@ -40,7 +40,7 @@ const Songs = [
 
 const LoggedInHomeComponent = () => {
   return (
-    <LoggedInContainers>
+    <LoggedInContainers currentActiveScreen="home">
       <PlaylistView titleText="Songs" cardsData={Songs} />
       <PlaylistView titleText="Pop" cardsData={Songs} />
       <PlaylistView titleText="Study" cardsData={Songs} />
