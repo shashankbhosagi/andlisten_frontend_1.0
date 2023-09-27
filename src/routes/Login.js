@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import TextInput from "../components/shared/TextInput";
 import { Link, useNavigate } from "react-router-dom";
 import { makeUnaunthenticatedPOSTRequest } from "../utils/serverHelpers";
+import andlisten_logo from "../assets/images/logo_with_name_new.png";
 
 const LoginComponent = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +31,8 @@ const LoginComponent = () => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className="logo p-5 border-b border-solid border-gray-300 w-full flex justify-center">
-        <Icon icon="logos:spotify" width="150" />
+        {/* <Icon icon="logos:spotify" width="150" /> */}
+        <img src={andlisten_logo} alt="anslisten logo" width={200} />
       </div>
       <div className="inputRegion w-1/3 py-10 flex flex-col items-center">
         {/* here we will have two input email and password and will have signup instead button*/}

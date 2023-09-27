@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import spotify_logo from "../../assets/images/spotify_logo.svg";
+import andlisten_logo from "../../assets/images/logo_with_name_new.png";
 import IconText from "../../components/shared/IconText";
 const SideBarComponent = () => {
   return (
@@ -9,7 +9,7 @@ const SideBarComponent = () => {
         <div>
           {/* This one for logo */}
           <div className="logoDiv p-6">
-            <img src={spotify_logo} alt="spotify logo" width={125} />
+            {/* <img src={andlisten_logo} alt="andlisten logo" width={125} />  */}
           </div>
           <div className="py-5">
             <IconText

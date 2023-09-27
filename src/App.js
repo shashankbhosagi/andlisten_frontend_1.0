@@ -9,6 +9,7 @@ import LoggedInHomeComponent from "./routes/LoggedInHome";
 import UploadSongComponent from "./routes/UploadSongCompanent";
 import MyMusic from "./routes/MyMusic";
 import songContext from "./context/songContext";
+import SearchPage from "./routes/SearchPage";
 
 function App() {
   const [currentSong, setCurrentSong] = useState(null);
@@ -35,6 +36,7 @@ function App() {
               <Route path="/home" element={<LoggedInHomeComponent />} />
               <Route path="/uploadSong" element={<UploadSongComponent />} />
               <Route path="/myMusic" element={<MyMusic />} />
+              <Route path="/search" element={<SearchPage />} />
               <Route path="*" element={<Navigate to="/home" />} />
             </Routes>
           </songContext.Provider>

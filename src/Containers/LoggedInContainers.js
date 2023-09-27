@@ -2,11 +2,13 @@ import { useContext, useRef, useState, useLayoutEffect } from "react";
 import { Howl, Howler } from "howler";
 import TextWithHover from "../components/shared/TextWithHover";
 import { Icon } from "@iconify/react";
-import spotify_logo from "../assets/images/spotify_logo.svg";
+import andlisten_logo_black from "../assets/images/logo_with_name_black.png";
 import IconText from "../components/shared/IconText";
 import songContext from "../context/songContext";
+import CreatePlaylistModal from "../modals/CreatePlaylistModal";
 
 const LoggedInContainers = ({ children, currentActiveScreen }) => {
+  const [createPlaylistModalOpen, setCreatePlaylistModalOpen] = useState(false);
   const {
     currentSong,
     setCurrentSong,
@@ -68,13 +70,24 @@ const LoggedInContainers = ({ children, currentActiveScreen }) => {
   return (
     <>
       <div className="h-full w-full " style={{ background: `#121212` }}>
+        {createPlaylistModalOpen && (
+          <CreatePlaylistModal
+            closeModal={() => {
+              setCreatePlaylistModalOpen(false);
+            }}
+          />
+        )}
         <div className={`${currentSong ? "h-9/10" : "h-full"} w-full flex`}>
           {/* First div will be the left panel */}
           <div className="h-full bg-black w-1/5 flex flex-col justify-between pb-10">
             <div>
               {/* This one for logo */}
               <div className="logoDiv p-6">
-                <img src={spotify_logo} alt="spotify logo" width={125} />
+                <img
+                  src={andlisten_logo_black}
+                  alt="andlisten logo"
+                  width={175}
+                />
               </div>
               <div className="py-5">
                 <IconText
@@ -86,6 +99,7 @@ const LoggedInContainers = ({ children, currentActiveScreen }) => {
                 <IconText
                   iconName="material-symbols:search-rounded"
                   displayText="Search"
+                  targetLink="/search"
                   active={currentActiveScreen === "search"}
                 />
                 <IconText
@@ -104,6 +118,9 @@ const LoggedInContainers = ({ children, currentActiveScreen }) => {
                 <IconText
                   iconName="icon-park-outline:add"
                   displayText="Create Playlist"
+                  onClick={() => {
+                    setCreatePlaylistModalOpen(true);
+                  }}
                 />
                 <IconText
                   iconName="mdi:heart-box-outline"
