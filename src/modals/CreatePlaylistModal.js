@@ -1,6 +1,20 @@
+import { useState } from "react";
 import TextInput from "../components/shared/TextInput";
+import { makeAuthenticatedPOSTResuest } from "../utils/serverHelpers";
 
 const CreatePlaylistModal = ({ closeModal }) => {
+  const [playlistName, setPlaylistName] = useState("");
+  const [playlistThumbnail, setPlaylistThumbnail] = useState("");
+
+  const createPlaylist = async () => {
+    const response = await makeAuthenticatedPOSTResuest("/playlist/create", {
+      name: playlistName,
+      thumbnail: playlistThumbnail,
+      songs: [],
+    });
+    console.log(response);
+  };
+
   return (
     <div
       className="absolute bg-black w-screen h-screen bg-opacity-50 flex justify-center items-center"
@@ -20,17 +34,20 @@ const CreatePlaylistModal = ({ closeModal }) => {
             label="Name"
             labelClassName={"text-white"}
             placeholder={"Playlist name"}
-            // value={thumbnail}
-            // setValue={setThumbnail}
+            value={playlistName}
+            setValue={setPlaylistName}
           />{" "}
           <TextInput
             label="Thumbnail"
             labelClassName={"text-white"}
             placeholder={"Thumbnail"}
-            // value={thumbnail}
-            // setValue={setThumbnail}
+            value={playlistThumbnail}
+            setValue={setPlaylistThumbnail}
           />
-          <div className="bg-white w-1/3 rounded flex font-semibold justify-center  items center py-3">
+          <div
+            className="bg-white w-1/3 rounded flex font-semibold justify-center  items center py-3"
+            onClick={createPlaylist}
+          >
             Create
           </div>
         </div>

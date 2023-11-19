@@ -9,7 +9,7 @@ const SideBarComponent = () => {
         <div>
           {/* This one for logo */}
           <div className="logoDiv p-6">
-            {/* <img src={andlisten_logo} alt="andlisten logo" width={125} />  */}
+            <img src={andlisten_logo} alt="andlisten logo" width={125} />
           </div>
           <div className="py-5">
             <IconText
