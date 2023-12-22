@@ -1,3 +1,8 @@
-# 🚧🚧🏗🛂👷🏼‍♂️👷🏼‍♂️UNDER CONSTRUCTION 🚧🚧🏗🛂👷🏼‍♂️👷🏼‍♂️
+# &Listen (A MERN stack music player)
 
-### This is FRONT-END for an app in ReactJS + TailwindCSS 👾
+## Login page
+## Home Page
+## Mymusic 
+## Playing a music
+## Uploading music
+## Search a music
