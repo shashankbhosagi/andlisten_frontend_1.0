@@ -102,11 +102,11 @@ const LoggedInContainers = ({ children, currentActiveScreen }) => {
                   targetLink="/search"
                   active={currentActiveScreen === "search"}
                 />
-                <IconText
+                {/* <IconText
                   iconName="fluent:library-28-regular"
                   displayText="Library"
                   active={currentActiveScreen === "library"}
-                />
+                /> */}
                 <IconText
                   iconName="ic:baseline-library-music"
                   displayText="My Music"
@@ -122,10 +122,10 @@ const LoggedInContainers = ({ children, currentActiveScreen }) => {
                     setCreatePlaylistModalOpen(true);
                   }}
                 />
-                <IconText
+                {/* <IconText
                   iconName="mdi:heart-box-outline"
                   displayText="Liked Songs"
-                />
+                /> */}
               </div>
             </div>
             <div className="px-5">
@@ -216,7 +216,7 @@ const LoggedInContainers = ({ children, currentActiveScreen }) => {
               </div>
               {/* <div>progress bar</div> */}
             </div>
-            <div className="w-1/4 flex justify-end">right part</div>
+            {/* <div className="w-1/4 flex justify-end">right part</div> */}
           </div>
         )}
       </div>

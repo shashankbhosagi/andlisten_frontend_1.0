@@ -6,7 +6,7 @@ const TextWithHover = ({ displayText, active, targetLink }) => {
         <div
           className={`${
             active ? "text-white" : "text-gray-500"
-          } font-semibold hover:text-white`}
+          } font-semibold hover:text-white `}
         >
           {displayText}
         </div>

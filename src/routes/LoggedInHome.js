@@ -17,24 +17,17 @@ const Songs = [
       "https://upload.wikimedia.org/wikipedia/en/1/14/Olivia_Rodrigo_-_Vampire.png",
   },
   {
-    title: "A Lovely Night",
+    title: "Blank Space",
     description:
-      "Some other girl and guy would love the swirling sky but there's only you and I ",
-    srcImg: "https://i.ibb.co/yycnHjj/lala-land.jpg",
+      "Nice to meet you where you been? I could show you incredible things",
+    srcImg: "https://i.scdn.co/image/ab67616d00001e029abdf14e6058bd3903686148",
   },
   {
-    title: "Pink Venom",
+    title: "Night Changes",
     description:
-      "This that pink venom this that pink venom taste that pink venom ",
+      "Everything that you ever dreamed of disappearing when you wake up.",
     srcImg:
-      "https://upload.wikimedia.org/wikipedia/en/c/cb/Pink_Venom_Cover.jpg",
-  },
-  {
-    title: "Vampire",
-    description:
-      "Bloodsucker, Famefucker bleedin' me dry, like a goddamn vampire",
-    srcImg:
-      "https://upload.wikimedia.org/wikipedia/en/1/14/Olivia_Rodrigo_-_Vampire.png",
+      "https://upload.wikimedia.org/wikipedia/en/d/d1/One_Direction_-_Night_Changes_Single_Cover.png",
   },
 ];
 
